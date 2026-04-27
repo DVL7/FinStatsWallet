@@ -7,7 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Npgsql" Version="9.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.7" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
+        <PackageReference Include="Npgsql" Version="10.0.2" />
     </ItemGroup>
 
     <ItemGroup>
@@ -16,7 +18,6 @@
       <Folder Include="Domain\Entities\" />
       <Folder Include="Domain\Enums\" />
       <Folder Include="Domain\Rules\" />
-      <Folder Include="Infrastructure\Data\" />
       <Folder Include="Infrastructure\Repositories\" />
       <Folder Include="ViewModels\Report\" />
       <Folder Include="ViewModels\Transaction\" />

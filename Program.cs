@@ -1,17 +1,23 @@
 using Npgsql;
+using Microsoft.EntityFrameworkCore;
+using FinStatsWallet.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var postgresConnectionString = builder.Configuration.GetConnectionString("Postgres")
+var connectionString = builder.Configuration.GetConnectionString("Postgres")
     ?? throw new InvalidOperationException("Connection string 'Postgres' is missing.");
 
 // Add services to the container.
 builder.Services.AddSingleton(_ =>
 {
-    var dataSourceBuilder = new NpgsqlDataSourceBuilder(postgresConnectionString);
+    var dataSourceBuilder = new NpgsqlDataSourceBuilder(connectionString);
     return dataSourceBuilder.Build();
 });
 builder.Services.AddControllersWithViews();
+
+// DbContext
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(connectionString));
 
 var app = builder.Build();
 
