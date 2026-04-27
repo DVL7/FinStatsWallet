@@ -1,6 +1,33 @@
+# Build outputs
 bin/
 obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
-**.DS_Store
+packages/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDEs and editors
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.DotSettings.user
+*.iml
+_ReSharper.Caches/
+
+# Local environment files
+.env
+.env.*
+
+# Sensitive ASP.NET settings (keep local only)
+appsettings.json
+appsettings.Development.json
+appsettings.*.json
+!appsettings.Example.json
+!appsettings.Development.Example.json

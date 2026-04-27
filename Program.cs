@@ -1,6 +1,16 @@
+using Npgsql;
+
 var builder = WebApplication.CreateBuilder(args);
 
+var postgresConnectionString = builder.Configuration.GetConnectionString("Postgres")
+    ?? throw new InvalidOperationException("Connection string 'Postgres' is missing.");
+
 // Add services to the container.
+builder.Services.AddSingleton(_ =>
+{
+    var dataSourceBuilder = new NpgsqlDataSourceBuilder(postgresConnectionString);
+    return dataSourceBuilder.Build();
+});
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

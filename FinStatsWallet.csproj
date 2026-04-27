@@ -7,6 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Npgsql" Version="9.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Folder Include="Application\Interfaces\" />
       <Folder Include="Application\Services\" />
       <Folder Include="Domain\Entities\" />
