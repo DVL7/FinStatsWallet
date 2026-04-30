@@ -15,7 +15,6 @@
     <ItemGroup>
       <Folder Include="Application\Interfaces\" />
       <Folder Include="Application\Services\" />
-      <Folder Include="Domain\Entities\" />
       <Folder Include="Domain\Enums\" />
       <Folder Include="Domain\Rules\" />
       <Folder Include="Infrastructure\Repositories\" />
